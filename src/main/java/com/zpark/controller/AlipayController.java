@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alipay.api.AlipayApiException;
@@ -15,9 +16,10 @@ import com.alipay.api.request.AlipayTradePagePayRequest;
 import com.zpark.util.AlipayConfig;
 
 @RestController
+@RequestMapping("alipay")
 public class AlipayController {
 	
-	
+	@RequestMapping("testAlipay")
 	public void doPost(HttpServletRequest httpRequest, HttpServletResponse httpResponse, Float amount, String orderMessage) throws ServletException, IOException {
 		AlipayClient alipayClient = new DefaultAlipayClient("https://openapi.alipay.com/gateway.do", AlipayConfig.app_id,
 				AlipayConfig.merchant_private_key, "json", AlipayConfig.charset, AlipayConfig.alipay_public_key, AlipayConfig.sign_type); // 获得初始化的AlipayClient
