@@ -18,7 +18,7 @@ import com.zpark.util.AlipayConfig;
 public class AlipayController {
 	
 	
-	public void doPost(HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws ServletException, IOException {
+	public void doPost(HttpServletRequest httpRequest, HttpServletResponse httpResponse, Float amount, String orderMessage) throws ServletException, IOException {
 		AlipayClient alipayClient = new DefaultAlipayClient("https://openapi.alipay.com/gateway.do", AlipayConfig.app_id,
 				AlipayConfig.merchant_private_key, "json", AlipayConfig.charset, AlipayConfig.alipay_public_key, AlipayConfig.sign_type); // 获得初始化的AlipayClient
 		AlipayTradePagePayRequest alipayRequest = new AlipayTradePagePayRequest();// 创建API对应的request
