@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!-- 设置数据库驱动jar文件的位置 -->
+	<classPathEntry
+		location="D:\web\myBatis\mysql-connector-java-5.1.5-bin.jar"></classPathEntry>
+
+	<!-- targetRuntime: 1.MyBatis3:默认的值，生成基于MyBatis3.x 以上版本的内容，包括xxxBySample 
+		2.MyBatis3Simple:类似MyBatis3，只是不生成XXXBySample -->
+
+	<context id="context1" targetRuntime="MyBatis3Simple">
+
+		<!-- 开启注释 -->
+		<commentGenerator>
+
+			<!-- 是否生成注释，为true表示不生成注释 -->
+			<property name="suppressAllComments" value="false" />
+			<property name="suppressDate" value="false" />
+
+		</commentGenerator>
+
+		<!-- 设置数据库连接信息 -->
+		<!-- 在xml文件中 &符号 需要转义 这个根据 HTML 的转义规则 更改就行 & -> &amp; -->
+		<jdbcConnection
+			connectionURL="jdbc:mysql://127.0.0.1:3306/mallsystem?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false"
+			driverClass="com.mysql.jdbc.Driver" password="125003" userId="root" />
+
+		<!-- 设置实体类所在的项目与包的位置 -->
+		<javaModelGenerator targetPackage="com.zpark.pojo"
+			targetProject="springboot_mybatis_mall\src\main\java" />
+
+		<!-- 设置实体类对应的映射文件生成的项目与包的位置 -->
+		<sqlMapGenerator targetPackage="com.zpark.mapper"
+			targetProject="springboot_mybatis_mall\src\main\java" />
+
+		<!-- 设置数据库持久化层所在的项目与包的位置 -->
+		<javaClientGenerator
+			targetPackage="com.zpark.mapper"
+			targetProject="springboot_mybatis_mall\src\main\java"
+			type="XMLMAPPER" />
+
+		<!-- 设置数据库中的表 -->
+		<!-- <table schema="mallsystem" tableName="tbcatalog"
+			enableSelectByExample="true" enableUpdateByPrimaryKey="true"
+			enableDeleteByPrimaryKey="true">
+
+			是否使用表中的列名生成类中的成员变量名
+			<columnOverride column="useActualColumnNames"
+				property="false" />
+		</table> -->
+
+		<!-- 设置数据库中的表 -->
+		<table schema="mallsystem" tableName="tborder"
+			enableSelectByExample="true" enableUpdateByPrimaryKey="true"
+			enableDeleteByPrimaryKey="true">
+
+			<!-- 是否使用表中的列名生成类中的成员变量名 -->
+			<columnOverride column="useActualColumnNames"
+				property="false" />
+		</table>
+		
+		<!-- 设置数据库中的表 -->
+		<!-- <table schema="mallsystem" tableName="tbbrand"
+			enableSelectByExample="true" enableUpdateByPrimaryKey="true"
+			enableDeleteByPrimaryKey="true">
+
+			是否使用表中的列名生成类中的成员变量名
+			<columnOverride column="useActualColumnNames"
+				property="false" />
+		</table> -->
+
+		<!-- 设置数据库中的表 -->
+		<!-- <table schema="mallsystem" tableName="tbproduct"
+			enableSelectByExample="true" enableUpdateByPrimaryKey="true"
+			enableDeleteByPrimaryKey="true">
+
+			是否使用表中的列名生成类中的成员变量名
+			<columnOverride column="useActualColumnNames"
+				property="false" />
+		</table> -->
+
+		<!-- 设置数据库中的表 -->
+		<!-- <table schema="mallsystem" tableName="tbuser"
+			enableSelectByExample="true" enableUpdateByPrimaryKey="true"
+			enableDeleteByPrimaryKey="true">
+
+			是否使用表中的列名生成类中的成员变量名
+			<columnOverride column="useActualColumnNames"
+				property="false" />
+		</table> -->
+		
+		<!-- 设置数据库中的表 -->
+		<!-- <table schema="mallsystem" tableName="tborderdetailed"
+			enableSelectByExample="true" enableUpdateByPrimaryKey="true"
+			enableDeleteByPrimaryKey="true">
+
+			是否使用表中的列名生成类中的成员变量名
+			<columnOverride column="useActualColumnNames"
+				property="false" />
+		</table> -->
+	</context>
+</generatorConfiguration>
